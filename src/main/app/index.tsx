@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Button } from 'antd';
-import './App.less';
+import './index.less';
 
 const App: FC = () => {
     return <Button type="primary">Button</Button>;
