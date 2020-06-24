@@ -1,7 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, { FC } from 'react';
+import { Button } from 'antd';
+import './App.less';
 
-const App = (): ReactElement => {
-    return <h1>Hello React</h1>;
+const App: FC = () => {
+    return <Button type="primary">Button</Button>;
 };
 
 export default App;
