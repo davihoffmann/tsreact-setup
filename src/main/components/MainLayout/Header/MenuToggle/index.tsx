@@ -1,12 +1,18 @@
-import React, { ReactElement, useState } from 'react';
-import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
+import { AppState } from '../../../../app/store/types';
+import { LayoutState } from '../../../LayoutConfigurer/store/types';
+import { getMaximized } from '../../../LayoutConfigurer/store';
+import { setMaximized } from '../../../LayoutConfigurer/store/actions';
+import { DispatchProps } from './types';
+import MenuToggle from './MenuToggle';
 
-export default function MenuToggle(): ReactElement {
-    const [maximized, setMaximized] = useState(false);
+const mapStateToProps = (state: AppState): Pick<LayoutState, 'maximized'> => ({
+    maximized: getMaximized(state),
+});
 
-    return maximized ? (
-        <MenuFoldOutlined className="trigger" onClick={() => setMaximized(!maximized)} />
-    ) : (
-        <MenuUnfoldOutlined className="trigger" onClick={() => setMaximized(!maximized)} />
-    );
-}
+const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
+    setMaximized: (maximized: boolean) => dispatch(setMaximized(maximized)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MenuToggle);
