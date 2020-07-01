@@ -1,6 +1,10 @@
 import React, { ReactElement } from 'react';
+import { useHistory } from 'react-router-dom';
+import { home } from '../../../../modules/Site/routes';
 
 export default function Logo(): ReactElement {
+    const history = useHistory();
+
     return (
         <div
             style={{
@@ -9,9 +13,7 @@ export default function Logo(): ReactElement {
                 margin: '16px',
                 cursor: 'pointer',
             }}
-            onClick={() => {
-                console.log('clicou na logo!');
-            }}
+            onClick={() => history.push(home.path)}
         />
     );
 }
