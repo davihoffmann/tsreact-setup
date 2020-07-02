@@ -1,17 +1,11 @@
-import React, { ReactElement } from 'react';
-import { Menu as AntdMenu } from 'antd';
+import { connect } from 'react-redux';
+import { AppState } from '../../../../app/store/types';
+import { isAuthenticated } from '../../../../modules/Auth/store';
+import { StateProps } from './types';
+import Menu from './Menu';
 
-export default function Menu(): ReactElement {
-    return (
-        <AntdMenu theme="dark" mode="horizontal">
-            <AntdMenu.Item
-                key="login"
-                onClick={() => {
-                    console.log('Logar');
-                }}
-            >
-                Login
-            </AntdMenu.Item>
-        </AntdMenu>
-    );
-}
+const mapStateToProps = (state: AppState): StateProps => ({
+    isAuthenticated: isAuthenticated(state),
+});
+
+export default connect(mapStateToProps)(Menu);

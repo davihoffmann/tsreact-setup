@@ -1,33 +1,17 @@
-import React, { ReactElement } from 'react';
-import { Route } from 'react-router-dom';
-import MainLayout from '../../components/MainLayout';
+import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
+import { AppState } from '../../app/store/types';
+import { isAuthenticated } from '../Auth/store';
+import { getRoot } from './store/actions';
+import { DispatchProps, StateProps } from './types';
+import Main from './Main';
 
-import Content from '../../components/ContentLayout';
+const mapStateToProps = (state: AppState): StateProps => ({
+    isAuthenticated: isAuthenticated(state),
+});
 
-import { home, nav1, nav2 } from './routes';
+const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
+    getRoot: () => dispatch(getRoot.request()),
+});
 
-const Main = (): ReactElement => {
-    return (
-        <MainLayout>
-            <Route {...home} render={() => <Content />} />
-            <Route
-                {...nav1}
-                render={() => (
-                    <Content>
-                        <h1>Nav 1</h1>
-                    </Content>
-                )}
-            />
-            <Route
-                {...nav2}
-                render={() => (
-                    <Content>
-                        <h1>Nav 2</h1>
-                    </Content>
-                )}
-            />
-        </MainLayout>
-    );
-};
-
-export default Main;
+export default connect(mapStateToProps, mapDispatchToProps)(Main);

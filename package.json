@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "antd": "^4.3.5",
-    "dayjs": "^1.8.28",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
+    "dayjs": "^1.8.28",
+    "jsonwebtoken": "^8.5.1",
     "redux": "^4.0.5",
     "react-redux": "^7.2.0",
     "redux-observable": "^1.2.0",

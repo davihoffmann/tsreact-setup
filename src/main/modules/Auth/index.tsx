@@ -1,19 +1,11 @@
-import React, { ReactElement } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { AppState } from '../../app/store/types';
+import { isAuthenticated } from './store';
+import { Props } from './types';
+import Auth from './Auth';
 
-import SiteLayout from '../../components/SiteLayout';
-import LoginPage from './LoginPage';
+const mapStateToProps = (state: AppState): Props => ({
+    isAuthenticated: isAuthenticated(state),
+});
 
-import { login } from './routes';
-
-const Auth = (): ReactElement => {
-    return (
-        <Switch>
-            <SiteLayout>
-                <Route {...login} render={() => <LoginPage />} />
-            </SiteLayout>
-        </Switch>
-    );
-};
-
-export default Auth;
+export default connect(mapStateToProps)(Auth);
