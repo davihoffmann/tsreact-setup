@@ -1,11 +1,12 @@
-import React, { ReactElement, PropsWithChildren } from 'react';
+import React, { ReactElement } from 'react';
+import logo from '../../resources/logo.svg';
 import './styles.css';
 
-export default function ExampleContents({ children }: PropsWithChildren<any>): ReactElement {
+export default function ContentLayout(): ReactElement {
     return (
         <div id="component-example-contents" className="App">
             <header className="App-header">
-                {children}
+                <img src={logo} className="App-logo" alt="logo" />
                 <p>
                     Edit <code>src/main/components/ExampleContents/index.tsx</code> and save to reload.
                 </p>

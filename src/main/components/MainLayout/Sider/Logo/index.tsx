@@ -2,9 +2,8 @@ import React, { ReactElement } from 'react';
 import { useHistory } from 'react-router-dom';
 import { home } from '../../../../modules/Site/routes';
 
-export default function Logo(): ReactElement {
+export default function Index(): ReactElement {
     const history = useHistory();
-
     return (
         <div
             style={{

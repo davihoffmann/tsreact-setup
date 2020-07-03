@@ -1,7 +1,8 @@
 import React, { ReactElement } from 'react';
 import { Divider, Layout } from 'antd';
-import MenuToggle from './MenuToggle';
 import Breadcrumb from './Breadcrumb';
+import MenuToggle from './MenuToggle';
+import UserAvatar from './UserAvatar';
 
 export default function Header(): ReactElement {
     return (
@@ -12,14 +13,15 @@ export default function Header(): ReactElement {
                 position: 'fixed',
                 zIndex: 1,
                 width: '100%',
-                background: '#f1f1f1',
+                background: '#fff',
             }}
         >
-            <div style={{ height: '64px', margin: '15px' }}>
+            <div style={{ height: '64px' }}>
                 <MenuToggle />
+                <UserAvatar />
             </div>
             <Divider style={{ margin: 0 }} />
-            <div style={{ margin: '15px' }}>
+            <div>
                 <Breadcrumb />
             </div>
         </Layout.Header>
