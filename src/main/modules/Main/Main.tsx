@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import MainLayout from '../../components/MainLayout';
-import Contents from '../../components/ContentLayout';
+import ContentLayout from '../../components/ContentLayout';
 import LayoutConfigurer from '../../components/LayoutConfigurer';
 import { login } from '../Auth/routes';
 import { Props } from './types';
@@ -19,7 +19,7 @@ export default function Main({ isAuthenticated, getRoot }: Props): ReactElement 
                         {...home}
                         render={() => (
                             <LayoutConfigurer breadcrumb={[]}>
-                                <Contents />
+                                <ContentLayout />
                             </LayoutConfigurer>
                         )}
                     />

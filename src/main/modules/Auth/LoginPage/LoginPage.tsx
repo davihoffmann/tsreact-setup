@@ -22,7 +22,7 @@ export default function LoginPage({ login, error }: Props): ReactElement {
     return (
         <Row id="component-auth-login-page" justify="center">
             <Col xs={20} sm={16} md={12} lg={8} xl={6}>
-                <Card title="Informe seus dados para fazer login">
+                <Card title="Informe seus dados para acessar">
                     {error && <Alert message={error.message} type="error" showIcon />}
                     <Form initialValues={inicialValues} onFinish={onSubmit}>
                         <Form.Item name="username" rules={rules.username}>
