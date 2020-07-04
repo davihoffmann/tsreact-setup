@@ -1,3 +1,7 @@
+#component-main-layout {
+    height: 100%;
+}
+
 #component-main-layout .trigger {
     font-size: 18px;
     line-height: 64px;
@@ -5,6 +9,7 @@
     cursor: pointer;
     transition: color 0.3s;
 }
+
 #component-main-layout .trigger:hover {
     color: #1890ff;
 }
