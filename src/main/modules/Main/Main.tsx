@@ -5,7 +5,7 @@ import ContentLayout from '../../components/ContentLayout';
 import LayoutConfigurer from '../../components/LayoutConfigurer';
 import { login } from '../Auth/routes';
 import { Props } from './types';
-import { home, nav1, nav2 } from './routes';
+import { home, pessoa, produto, nav1, nav2 } from './routes';
 
 export default function Main({ isAuthenticated, getRoot }: Props): ReactElement {
     useEffect(() => {
@@ -20,6 +20,22 @@ export default function Main({ isAuthenticated, getRoot }: Props): ReactElement 
                         render={() => (
                             <LayoutConfigurer breadcrumb={[]}>
                                 <ContentLayout />
+                            </LayoutConfigurer>
+                        )}
+                    />
+                    <Route
+                        {...pessoa}
+                        render={() => (
+                            <LayoutConfigurer breadcrumb={[{ title: 'Pessoa', path: pessoa.path }]}>
+                                <h1>Cadastro de Pessoas</h1>
+                            </LayoutConfigurer>
+                        )}
+                    />
+                    <Route
+                        {...produto}
+                        render={() => (
+                            <LayoutConfigurer breadcrumb={[{ title: 'Produto', path: produto.path }]}>
+                                <h1>Cadastro de Produtos</h1>
                             </LayoutConfigurer>
                         )}
                     />

@@ -11,8 +11,13 @@ export default function Index(): ReactElement {
                 background: 'rgba(255, 255, 255, 0.2)',
                 margin: '16px',
                 cursor: 'pointer',
+                color: '#fff',
+                fontSize: '18px',
+                textAlign: 'center',
             }}
             onClick={() => history.push(home.path)}
-        />
+        >
+            Reactjs
+        </div>
     );
 }

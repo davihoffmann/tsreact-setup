@@ -1,8 +1,8 @@
 import React, { ReactElement } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Menu as AntdMenu } from 'antd';
-import { UserOutlined, VideoCameraOutlined, WarningOutlined } from '@ant-design/icons';
-import { nav1, nav2 } from '../../../../modules/Main/routes';
+import { UserOutlined, VideoCameraOutlined, WarningOutlined, PlusCircleOutlined } from '@ant-design/icons';
+import { pessoa, produto, nav1, nav2 } from '../../../../modules/Main/routes';
 import { Props } from './types';
 
 export default function Menu({ rootLinks, error }: Props): ReactElement {
@@ -15,6 +15,16 @@ export default function Menu({ rootLinks, error }: Props): ReactElement {
             </AntdMenu.Item>
         );
     } else {
+        itens.push(
+            <AntdMenu.SubMenu key="sub1" icon={<PlusCircleOutlined />} title="Cadastros">
+                <AntdMenu.Item key="5" onClick={() => history.push(pessoa.path)}>
+                    Clientes
+                </AntdMenu.Item>
+                <AntdMenu.Item key="6" onClick={() => history.push(produto.path)}>
+                    Produtos
+                </AntdMenu.Item>
+            </AntdMenu.SubMenu>
+        );
         // todo: check rootLinks and add more itens... Ex:
         itens.push(
             <AntdMenu.Item key="nav1" icon={<UserOutlined />} onClick={() => history.push(nav1.path)}>

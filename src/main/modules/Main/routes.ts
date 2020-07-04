@@ -3,6 +3,16 @@ export const home = {
     path: '/main',
 };
 
+export const pessoa = {
+    exact: true,
+    path: `${home.path}/pessoa`,
+};
+
+export const produto = {
+    exact: true,
+    path: `${home.path}/produto`,
+};
+
 export const nav1 = {
     exact: true,
     path: `${home.path}/nav1`,
