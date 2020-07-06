@@ -11,9 +11,8 @@ export default function Header(): ReactElement {
                 padding: 0,
                 height: 'auto',
                 position: 'fixed',
-                zIndex: 1,
-                width: '100%',
                 background: '#fff',
+                width: '100%',
             }}
         >
             <div style={{ height: '64px' }}>

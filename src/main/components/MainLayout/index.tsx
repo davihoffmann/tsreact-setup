@@ -14,8 +14,12 @@ export default function MainLayout({ children }: Props): ReactElement {
                 <Layout.Content style={{ margin: '133px 16px 16px', padding: '16px', background: '#fff' }}>
                     {children}
                 </Layout.Content>
-                <Layout.Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Layout.Footer>
+                <Layout.Footer style={{ margin: '1px 16px 16px', textAlign: 'center', background: '#fff' }}>
+                    Reactjs ©2020
+                </Layout.Footer>
             </Layout>
         </Layout>
     );
 }
+
+// #202020

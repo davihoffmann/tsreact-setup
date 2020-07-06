@@ -26,9 +26,5 @@ export default function Menu({ isAuthenticated }: Props): ReactElement {
             </AntdMenu.Item>
         );
     }
-    return (
-        <AntdMenu theme="dark" mode="horizontal">
-            {itens}
-        </AntdMenu>
-    );
+    return <AntdMenu mode="horizontal">{itens}</AntdMenu>;
 }

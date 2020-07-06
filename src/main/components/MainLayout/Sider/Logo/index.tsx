@@ -8,10 +8,8 @@ export default function Index(): ReactElement {
         <div
             style={{
                 height: '32px',
-                background: 'rgba(255, 255, 255, 0.2)',
                 margin: '16px',
                 cursor: 'pointer',
-                color: '#fff',
                 fontSize: '18px',
                 textAlign: 'center',
             }}

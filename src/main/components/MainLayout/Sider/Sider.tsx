@@ -7,6 +7,7 @@ import Menu from './Menu';
 export default function Sider({ maximized, setMaximized }: Props): ReactElement {
     return (
         <Layout.Sider
+            theme="light"
             trigger={null}
             collapsible
             collapsed={!maximized}

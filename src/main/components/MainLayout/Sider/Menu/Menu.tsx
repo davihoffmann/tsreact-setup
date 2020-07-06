@@ -37,9 +37,5 @@ export default function Menu({ rootLinks, error }: Props): ReactElement {
             </AntdMenu.Item>
         );
     }
-    return (
-        <AntdMenu theme="dark" mode="inline">
-            {itens}
-        </AntdMenu>
-    );
+    return <AntdMenu mode="inline">{itens}</AntdMenu>;
 }
